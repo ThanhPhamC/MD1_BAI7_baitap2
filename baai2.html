@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<table  class="bang" border="1" cellpadding="30px" >
+  <tr>
+    <th>Amount</th>
+    <th>From Currency </th>
+    <th >To Currency </th>
+    <th rowspan="3" ><button onclick="luachon1() "  >Convert</button></th>
+  </tr>
+  <tr>
+    <td>
+      <input type="text" id="soTien"  value=""  >
+    </td>
+    <td >
+      <select onchange="luachon1()"  id="lc1" >
+        <option value="vnd" >Đông lào</option>
+        <option value="usd" >Ơ me ri cần tho</option>
+      </select>
+    </td>
+    <td>
+      <select onchange="luachon1()" id="lc2" >
+        <option value="usd" >USD</option>
+        <option value="vnd" >VND</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td style="color: darkblue; "  >Result: </td>
+    <td colspan="2" id="h1" ></td>
+  </tr>
+</table>
+<script >
+  function luachon1() {
+    let a= +document.getElementById("soTien").value;
+    let x = document.getElementById("lc1").value;
+    let y = document.getElementById("lc2").value;
+    if(x == y){
+      document.getElementById("h1").innerHTML= a;
+    }
+    if (x=="vnd" && y=="usd" ){
+      document.getElementById("h1").innerHTML=a/23000;
+    }
+    if(x=="usd" && y=="vnd") {
+      document.getElementById("h1").innerHTML=a*230000;
+    }
+  }
+</script>
+</body>
+</html>
+
